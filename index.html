@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>🌸</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Lora&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#ffe3ec;--bg2:#f3d9f5;--bg3:#ffd6c9;--ink:#7a1f45;--card:rgba(255,252,248,.78);--pink:#e0568a;--deep:#c2185b;--plum:#a56bc7;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#3a1530;--bg2:#2a1840;--bg3:#42202c;--ink:#ffd3e3;--card:rgba(50,22,45,.75)}}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{font-family:Lora,Georgia,serif;color:var(--ink);background:linear-gradient(130deg,var(--bg1),var(--bg2),var(--bg3),var(--bg1));background-size:300% 300%;animation:bg 16s ease infinite;display:flex;align-items:center;justify-content:center;overflow:hidden}
+@keyframes bg{50%{background-position:100% 50%}}
+canvas{position:fixed;inset:0;pointer-events:none;z-index:0}
+#card{position:relative;z-index:1;width:min(92%,430px);max-height:90%;overflow:auto;background:var(--card);backdrop-filter:blur(10px);border-radius:26px;padding:28px 24px;text-align:center;box-shadow:0 20px 60px rgba(194,24,91,.22);animation:in .6s cubic-bezier(.2,1.3,.4,1)}
+@keyframes in{from{opacity:0;transform:translateY(30px) scale(.9)}}
+h1{font-family:'Playfair Display',Georgia,serif;font-size:1.5rem;margin:14px 0 8px}
+p{margin:6px 0 16px;opacity:.85}
+.pic{width:92px;height:92px;border-radius:22px;object-fit:cover;display:inline-flex;align-items:center;justify-content:center;font-size:48px;background:rgba(224,86,138,.12);box-shadow:0 6px 18px rgba(0,0,0,.15)}
+.row{display:flex;gap:14px;justify-content:center;align-items:center;min-height:56px;margin-top:14px}
+.b{font:inherit;color:#fff;border:0;border-radius:999px;padding:12px 26px;background:linear-gradient(135deg,var(--pink),var(--deep));cursor:pointer;box-shadow:0 6px 16px rgba(194,24,91,.35);transition:transform .15s,left .25s,top .25s}
+.b:hover{transform:scale(1.07)}.b.alt{background:linear-gradient(135deg,#b88ae0,var(--plum));z-index:5}.b.wide{width:100%;margin-top:12px}
+label{display:block;text-align:left;font-weight:600;margin:12px 0 4px}
+input,select,textarea{width:100%;font:inherit;padding:10px;border-radius:12px;border:1px solid var(--pink);background:rgba(255,255,255,.85);color:#4a1530}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.opt{font:inherit;color:var(--ink);background:rgba(224,86,138,.1);border:1.5px solid transparent;border-radius:16px;padding:14px 4px;cursor:pointer;transition:.2s}
+.opt:hover,.opt.on{border-color:var(--pink);transform:translateY(-3px)}.opt span{display:block;font-size:30px}
+#gear{position:fixed;bottom:calc(8px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);z-index:3;background:none;border:0;font-size:16px;opacity:.12;cursor:pointer;color:var(--ink)}#gear:hover{opacity:.7}
+#adm{position:fixed;inset:0;z-index:20;background:rgba(40,10,30,.55);display:none;justify-content:flex-end}
+#adm.on{display:flex}
+#pn{width:min(560px,100%);height:100%;overflow:auto;background:#fff8fb;color:#4a1530;padding:18px}
+#pn h2{margin:0 0 10px;font-family:'Playfair Display',Georgia,serif}
+.pg{border:1px solid #f0bfd2;border-radius:14px;padding:12px;margin:12px 0;background:#fff}
+.pg label{font-size:.85rem;margin:8px 0 3px}.pg .tools{display:flex;gap:6px;align-items:center;justify-content:space-between}
+.sm{font:inherit;border:0;border-radius:8px;padding:6px 10px;background:#f5d0df;cursor:pointer;color:#4a1530}.sm.pr{background:var(--deep);color:#fff}
+:root:root:root{--ink:#fff;--pink:#ff2d4d;--deep:#b3001b}
+body{background:radial-gradient(circle at 50% 30%,#2a0309,#000 70%);animation:none;color:#fff}
+#card{background:linear-gradient(160deg,#1a0508,#0a0204);backdrop-filter:none;border:1px solid rgba(255,45,77,.35);box-shadow:0 20px 50px rgba(255,0,40,.2),inset 0 1px 0 rgba(255,255,255,.08)}
+h1{color:#fff;text-shadow:0 2px 14px rgba(255,45,77,.55)}
+.b{background:linear-gradient(180deg,#ff5470,#d10f2f);border-top:1px solid rgba(255,255,255,.45);font-weight:600;letter-spacing:.5px;box-shadow:0 6px 0 #7a0016,0 12px 22px rgba(255,0,40,.4);transition:transform .12s,box-shadow .12s,left .25s,top .25s}
+.b:hover{transform:translateY(-2px)}.b:active{transform:translateY(5px);box-shadow:0 1px 0 #7a0016}
+.b.alt{background:linear-gradient(180deg,#fff,#e4e4e4);color:#b3001b;box-shadow:0 6px 0 #9a9a9a,0 12px 22px rgba(255,255,255,.15)}
+.b.alt:active{box-shadow:0 1px 0 #9a9a9a}
+.opt{background:#1d0a0e;color:#fff;border:1.5px solid #5a1020;box-shadow:0 5px 0 #3a0912}.opt:hover,.opt.on{border-color:#ff2d4d;background:#2a0c14}
+.pic{background:rgba(255,45,77,.15)}
+#card input,#card select{background:#1d0a0e;color:#fff;border-color:#ff2d4d;color-scheme:dark}
+#gear{color:#fff}
+#kiss{display:none;position:fixed;inset:0;z-index:15;flex-direction:column;align-items:center;justify-content:center;perspective:900px;text-align:center;cursor:pointer}
+#kiss.on{display:flex;animation:in .6s cubic-bezier(.2,1.3,.4,1)}
+.lip{font-size:clamp(7rem,32vw,15rem);line-height:1;transform-style:preserve-3d;animation:lip 2.4s ease-in-out infinite;filter:drop-shadow(0 20px 30px rgba(255,0,60,.6))}
+@keyframes lip{0%,100%{transform:rotateY(-28deg) rotateX(8deg) scale(1)}50%{transform:rotateY(28deg) rotateX(-8deg) scale(1.15) translateY(-10px)}}
+#kiss h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.6rem,13vw,6.5rem);margin:10px 0 0;color:#fff;animation:pop 1.2s ease-in-out infinite;text-shadow:0 1px 0 #ff5470,0 2px 0 #e0284a,0 3px 0 #c2183a,0 4px 0 #a00f2c,0 5px 0 #7a0016,0 12px 25px rgba(255,0,60,.7)}
+@keyframes pop{50%{transform:scale(1.08) rotate(-2deg)}}
+</style></head><body>
+<canvas id="cv"></canvas>
+<div id="card"></div>
+<div id="kiss"><div class="lip">💋</div><h2>ummmmaah! 😘</h2></div>
+<button id="gear" aria-label="settings">⚙</button>
+<div id="adm"><div id="pn"></div></div>
+<script>
+const $=s=>document.querySelector(s),KEY='dateSiteCfg';
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const DEF=[
+{t:'yesno',em:'🐶',img:'',title:'🌸 Will you go on a date with me? 🌸',yes:'YES♥',no:'no 🐾'},
+{t:'message',em:'🧽',img:'',title:'WAIT YOU ACTUALLY SAID YES?? 😭',text:'I was so ready for you to say no 😅',btn:'okay okay! →'},
+{t:'date',em:'📅',img:'',title:'So... when are you free?',btn:'set the date! ♥'},
+{t:'choice',title:'What are we feeling? 🍽️✨',text:'pick your vibe',opts:'🍕|Pizza\n🍣|Sushi\n🍔|Burgers\n🍝|Pasta\n🌮|Tacos\n🍜|Ramen'},
+{t:'letter',title:"glad you didn't say no. be ready by 6, I'm coming to get you 🚗",text:'P.S. normal people text. I made a website during lunch, for you. no big deal.',btn:'ok I accept 💝'}];
+let cfg;try{cfg=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+if(!Array.isArray(cfg)||!cfg.length)cfg=JSON.parse(JSON.stringify(DEF));
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(cfg))}catch(e){alert('Storage full – use a smaller photo')}};
+let cur=0;
+function pic(p){return p.img?`<img class="pic" src="${esc(p.img)}">`:(p.em?`<div class="pic">${esc(p.em)}</div>`:'')}
+function show(i){cur=(i+cfg.length)%cfg.length;const p=cfg[cur],c=$('#card');let h='';document.querySelectorAll('body>#no').forEach(x=>x.remove());
+if(p.t==='yesno')h=pic(p)+`<h1>${esc(p.title)}</h1><div class="row"><button class="b" id="yes">${esc(p.yes)}</button><button class="b alt" id="no">${esc(p.no)}</button></div>`;
+else if(p.t==='message')h=pic(p)+`<h1>${esc(p.title)}</h1><p>${esc(p.text)}</p><button class="b" id="nx">${esc(p.btn)}</button>`;
+else if(p.t==='date')h=pic(p)+`<h1>${esc(p.title)}</h1><label>Pick a Day 📆</label><input type="date" id="dd"><label>What Time? ⏰</label><select id="tm">${['12:00 PM','3:00 PM','6:00 PM','8:00 PM'].map(t=>`<option>${t}</option>`).join('')}</select><button class="b wide" id="nx">${esc(p.btn)}</button>`;
+else if(p.t==='choice')h=`<h1>${esc(p.title)}</h1><p>${esc(p.text)}</p><div class="grid">${String(p.opts||'').split('\n').filter(Boolean).map(o=>{const[a,b]=o.split('|');return`<button class="opt"><span>${esc(a)}</span>${esc(b||'')}</button>`}).join('')}</div>`;
+else h=`<h1>${esc(p.title)}</h1><p>${esc(p.text)}</p><p>♥ ♥ ♥ ♥ ♥</p><button class="b wide" id="nx">${esc(p.btn)}</button>`;
+c.style.animation='none';c.offsetHeight;c.style.animation='';c.innerHTML=h;
+const nx=$('#nx');if(nx)nx.onclick=()=>{burst();if(p.t==='letter'){kiss();return}if(p.t==='date')notify('Date set 📅 '+($('#dd').value||'?')+' '+$('#tm').value);show(cur+1)};
+const y=$('#yes');if(y)y.onclick=()=>{burst();notify('She said YES ❤️🎉');show(cur+1)};
+const n=$('#no');if(n){n.onpointerdown=e=>{e.preventDefault();dodge(n)};n.onclick=e=>{e.preventDefault();dodge(n)}}
+c.querySelectorAll('.opt').forEach(o=>o.onclick=()=>{c.querySelectorAll('.opt').forEach(x=>x.classList.remove('on'));o.classList.add('on');burst();notify('Food 🍽️ '+o.textContent);setTimeout(()=>show(cur+1),700)})}
+function dodge(b){const w=b.offsetWidth,h=b.offsetHeight;if(b.parentNode!==document.body)document.body.appendChild(b);b.style.position='fixed';
+b.style.left=Math.max(8,Math.random()*(innerWidth-w-16))+'px';b.style.top=Math.max(8,Math.random()*(innerHeight-h-16))+'px'}
+document.addEventListener('pointermove',e=>{const n=$('#no');if(!n)return;const r=n.getBoundingClientRect();
+if(e.clientX>r.left-70&&e.clientX<r.right+70&&e.clientY>r.top-70&&e.clientY<r.bottom+70)dodge(n)});
+const NTFY='https://ntfy.sh/nike-love-879fc274d8c2';
+function notify(m){try{fetch(NTFY,{method:'POST',body:m,keepalive:true}).catch(()=>{})}catch(e){}}
+try{if(!sessionStorage.getItem('seen')){sessionStorage.setItem('seen','1');notify('She opened the date site 👀')}}catch(e){notify('She opened the date site 👀')}
+function kiss(){$('#card').style.display='none';$('#gear').style.display='none';$('#kiss').classList.add('on');notify('She accepted — ummmmaah 💋❤️');let n=0;const t=setInterval(()=>{burst();if(++n>12)clearInterval(t)},600)}
+$('#kiss').onclick=()=>burst();
+/* falling 3D flowers */
+const cv=$('#cv'),g=cv.getContext('2d');let P=[],W,H;const HS=(()=>{const c=document.createElement('canvas');c.width=c.height=64;const x=c.getContext('2d');x.font='52px serif';x.textAlign='center';x.textBaseline='middle';x.fillText('❤️',32,34);return c})();
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}rs();addEventListener('resize',rs);
+const mk=(top,x,y)=>({x:x??Math.random()*W,y:y??(top?-40:Math.random()*H),s:6+Math.random()*10,v:.5+Math.random()*1.3,sw:Math.random()*6.28,ss:.01+Math.random()*.02,a:Math.random()*6.28,as:.02+Math.random()*.04,life:1});
+for(let i=0;i<28;i++)P.push(mk(false));
+function burst(){for(let i=0;i<14;i++){const p=mk(true,Math.random()*W,H*.4*Math.random());p.v=1+Math.random()*3;p.x=W/2+(Math.random()-.5)*W*.8;p.tmp=1;P.push(p)}}
+(function loop(){g.clearRect(0,0,W,H);
+P=P.filter(p=>!(p.tmp&&p.y>H+40));
+P.forEach(p=>{p.y+=p.v;p.sw+=p.ss;p.a+=p.as;if(p.y>H+40&&!p.tmp){p.y=-40;p.x=Math.random()*W}
+g.save();g.globalAlpha=.55+p.s/80;g.translate(p.x+Math.sin(p.sw)*30,p.y);g.rotate(Math.sin(p.a)*.8);g.scale(Math.cos(p.a),1);
+g.drawImage(HS,-p.s/2,-p.s/2,p.s,p.s);g.restore()});
+requestAnimationFrame(loop)})();
+/* hidden settings */
+const TY={yesno:'Yes / No',message:'Message',date:'Date picker',choice:'Choices',letter:'Letter'};
+const FL={yesno:[['em','Emoji (if no photo)'],['title','Title'],['yes','Yes button'],['no','No button']],message:[['em','Emoji (if no photo)'],['title','Title'],['text','Text'],['btn','Button']],date:[['em','Emoji (if no photo)'],['title','Title'],['btn','Button']],choice:[['title','Title'],['text','Subtitle'],['opts','Options (one per line: 🍕|Pizza)','ta']],letter:[['title','Title'],['text','Text'],['btn','Button']]};
+function adm(){$('#pn').innerHTML=`<div class="tools" style="display:flex;justify-content:space-between"><h2>Settings</h2><button class="sm pr" data-a="close">Done</button></div>`+
+cfg.map((p,i)=>`<div class="pg"><div class="tools"><b>${i+1}. ${TY[p.t]}</b><span><button class="sm" data-a="up" data-i="${i}">↑</button> <button class="sm" data-a="dn" data-i="${i}">↓</button> <button class="sm" data-a="del" data-i="${i}">✕</button></span></div>`+
+(p.t==='yesno'||p.t==='message'||p.t==='date'?`<label>Photo</label><input type="file" accept="image/*" data-i="${i}">${p.img?`<button class="sm" data-a="rmimg" data-i="${i}">Remove photo</button>`:''}`:'')+
+FL[p.t].map(([k,l,ta])=>`<label>${l}</label>${ta?`<textarea rows="5" data-i="${i}" data-k="${k}">${esc(p[k])}</textarea>`:`<input data-i="${i}" data-k="${k}" value="${esc(p[k])}">`}`).join('')+`</div>`).join('')+
+`<div class="pg"><b>Add new tab</b><select id="nt">${Object.entries(TY).map(([k,v])=>`<option value="${k}">${v}</option>`).join('')}</select><br><br><button class="sm pr" data-a="add">+ Add</button></div>
+<div class="pg"><b>Backup / move to another device</b><textarea id="io" rows="3"></textarea><br><br><button class="sm" data-a="exp">Export</button> <button class="sm" data-a="imp">Import</button> <button class="sm" data-a="reset">Reset all</button></div>`}
+const PH='3c33ff3bdfcb993cb7eb2a418d8282ea8204923d5a200b696ce520e98d55a878';let ok=false;
+async function sha(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+function login(){$('#pn').innerHTML='<h2>🔒</h2><input type="password" id="pw" placeholder="Password"><br><br><button class="sm pr" id="go">Enter</button> <button class="sm" data-a="close">Cancel</button><p id="er" style="color:#b3001b"></p>';
+const t=async()=>{try{if(await sha($('#pw').value)===PH){ok=true;adm()}else $('#er').textContent='Wrong password'}catch(e){$('#er').textContent='Error'}};$('#go').onclick=t;$('#pw').onkeydown=e=>{if(e.key==='Enter')t()};setTimeout(()=>$('#pw').focus(),50)}
+$('#gear').onclick=()=>{$('#adm').classList.add('on');ok?adm():login()};
+$('#pn').addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b)return;const a=b.dataset.a,i=+b.dataset.i;
+if(a==='close'){ok=false;$('#adm').classList.remove('on');show(0);return}
+if(a==='up'&&i>0)[cfg[i-1],cfg[i]]=[cfg[i],cfg[i-1]];
+if(a==='dn'&&i<cfg.length-1)[cfg[i+1],cfg[i]]=[cfg[i],cfg[i+1]];
+if(a==='del'&&cfg.length>1&&confirm('Delete?'))cfg.splice(i,1);
+if(a==='rmimg')cfg[i].img='';
+if(a==='add'){const t=$('#nt').value;cfg.push({t,em:'💖',img:'',title:'New page',text:'Your text',btn:'next →',yes:'YES♥',no:'no 🐾',opts:'🍕|Pizza\n🍣|Sushi'})}
+if(a==='exp'){$('#io').value=JSON.stringify(cfg);return}
+if(a==='imp'){try{const v=JSON.parse($('#io').value);if(Array.isArray(v)&&v.length){cfg=v}}catch(x){alert('Invalid');return}}
+if(a==='reset'&&confirm('Reset everything?'))cfg=JSON.parse(JSON.stringify(DEF));
+save();adm()});
+$('#pn').addEventListener('change',e=>{const t=e.target,i=+t.dataset.i;
+if(t.type==='file'&&t.files[0]){const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const c=document.createElement('canvas'),k=Math.min(1,480/Math.max(im.width,im.height));c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);cfg[i].img=c.toDataURL('image/jpeg',.85);save();adm()};im.src=r.result};r.readAsDataURL(t.files[0]);return}
+if(t.dataset.k){cfg[i][t.dataset.k]=t.value;save()}});
+show(0);
+</script></body></html>
